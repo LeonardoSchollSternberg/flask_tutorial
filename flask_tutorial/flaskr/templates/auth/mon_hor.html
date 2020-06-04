@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horario Estações</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='estilo.css') }}">
+</head>
+<body> <!-- onload="carregar()"-->
+    <header>
+        <h1>Estação Aeroporto</h1>
+    </header>
+
+    <section class="info">
+        <div class="logo">
+            <img id="imagem-logo" src="{{url_for('static',filename='logo-trensurb2.png')}}" alt="LOGO DA TRENSURB" width="350" height="75">
+        </div>
+        <div id="horario">
+            <h2></h2>
+        </div>
+        <div id="calendario">
+            <h3></h3> <br>
+        </div>
+    </section>
+
+
+    <script src="{{url_for('static',filename='script.js')}}"></script>
+    <script>
+        var a = ({{ data|tojson }})
+        carregar(a)
+        alert(a)
+        //carregar( a )
+    </script> <!--|tojson-->
+</body
+</html>

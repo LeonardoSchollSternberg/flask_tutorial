@@ -1,0 +1,48 @@
+body {
+    background: rgb(0, 0, 0);
+    font: normal 30pt Arial;
+    font-style: italic;
+    color: white;
+}
+
+header {
+    color: white;
+    text-align: center;
+}
+
+section.info {
+    position: absolute solid;
+    height: 250px;
+    width: 99%;
+    /*border: 2px solid green;*/
+}
+
+div.logo {
+    position: absolute;
+    top: 6%;
+    left: 5%;
+    /*margin: auto;*/
+    /*border: 2px solid red;*/
+    margin-right: 1500px;
+    margin-bottom: 150px;
+}
+
+div#horario {
+    position: absolute;
+    left: 24%;
+    font: normal 200pt Arial;
+    font-style: italic;
+    color: yellow;
+    /*border: 2px solid red;*/
+}
+
+div#calendario {
+    position: absolute;
+    top: 70%;
+    left: 24%;
+    font: normal 100pt Arial;
+    /*border: 2px solid red;*/
+    text-align: right;
+    line-height: 0px;
+    color: green;
+}
