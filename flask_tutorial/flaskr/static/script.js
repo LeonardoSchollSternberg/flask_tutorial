@@ -1,4 +1,4 @@
-function carregar(user4) {
+function carregar() {
   document.body.style.cursor="none"
   var today = new Date()
   var month = today.getMonth()+1
@@ -33,10 +33,10 @@ function carregar(user4) {
   var hor = document.getElementById("horario").innerText=`${hours}:${min}:${sec}`
   var d_date = document.getElementById("calendario").innerText=`${day}/${month}/${today.getFullYear()} - ${semana[dia_semana]}`
   setTimeout(function() {
-    carregar(user4);
+    carregar();
   }, 1000);
   //setTimeout(carregar, 1000)
-  setTimeout(mudar, 5000)
+  setTimeout(mudar, 4000)
 
   //var hor = document.getElementById("horario").innerText=`${user4}`
 }
@@ -44,5 +44,5 @@ function carregar(user4) {
 
 
 function mudar() {
-  //document.location.href="teste2"
+  document.location.href="teste2"
 }

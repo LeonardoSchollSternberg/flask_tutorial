@@ -1,1 +1,1 @@
-"SEXTA_CURTA_TV_Prancheta_1.png", 1000; "imagem.jpg", 2000; "TRENSURB_CORONA_VT_1_v3_-_Canal_VC.mp4", 5000
+0,SEXTA_CURTA_TV_Prancheta_1.png,2000;1,imagem.jpg,4000;2,TRENSURB_CORONA_VT_1_v3_-_Canal_VC.mp4,5000

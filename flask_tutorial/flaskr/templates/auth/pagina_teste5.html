@@ -62,27 +62,19 @@
     <script>
         function foo() {
         document.body.style.cursor="none"
-        //var playlist = [{{ data|tojson }}]
-        var playlist = ['SEXTA_CURTA_TV_Prancheta_1.png', 'imagem.jpg', 'TRENSURB_CORONA_VT_1_v3_-_Canal_VC.mp4']
+        var playlist = ({{ data|tojson }})[0]
+        //var playlist = ['SEXTA_CURTA_TV_Prancheta_1.png', 'imagem.jpg', 'TRENSURB_CORONA_VT_1_v3_-_Canal_VC.mp4']
         //"TRENSURB_CAO_GUIA_2102_-_Canal_VC.mp4", "TRENSURB_CORONA_VT_1_v3_-_Canal_VC.mp4", "video_abril_2020_-_TV_hall.mp4", 
         //"SEXTA_CURTA_TV_Prancheta_1.png", "imagem.jpg", "download.jpg"
-        
-
-    //if(typeof(Storage) !== "undefined" ) {
-        if(localStorage.getItem("teste") == "undefined") {
-           localStorage.setItem("teste", "0")
-        }
-    //}
-
-        //var selec_img_vid=0
-        delay_img=5000 //delay de 8 seg
 
         loop()
         function loop() {
-            var arq_format = playlist[localStorage.getItem("teste")].split('.').pop()
+            var arq_format = playlist.split('.').pop()
+            //alert(arq_format)
 
             if(arq_format=="jpg"||arq_format=="png") {
-                document.getElementById("imagem").src="../static/"+playlist[localStorage.getItem("teste")]
+                delay_img=({{ data|tojson }})[1]
+                document.getElementById("imagem").src="../static/"+playlist
                 setTimeout(tira_imagem, delay_img);
                 setTimeout(mudar, delay_img);
             }
@@ -99,10 +91,10 @@
 
         function cria_video() {
             var novo_video = document.createElement("video")
-            novo_video.src="../static/"+playlist[localStorage.getItem("teste")]
+            novo_video.src="../static/"+playlist
             novo_video.muted = true
             novo_video.autoplay=true
-            novo_video.setAttribute("controls", "controls")
+            //novo_video.setAttribute("controls", "controls")
             novo_video.setAttribute("id", "myVideo")
             novo_video.width="1905" //1907
             document.getElementById("vidbox").append(novo_video)
@@ -114,42 +106,10 @@
             vid.src=""
             vid.load()
             vid.remove()
-
-            if(typeof(Storage) !== "undefined" ) {
-                if(localStorage.getItem("teste") >= playlist.length-1 ) {
-                    localStorage.setItem("teste", "0")
-                }
-                else {
-                    localStorage.setItem("teste", Number(localStorage.getItem("teste"))+1)
-                }
-            }
-
-            //if(selec_img_vid>=playlist.length-1) {
-            //    selec_img_vid=0
-            //}
-            //else {
-            //    selec_img_vid=selec_img_vid+1
-            //}
         };
 
         function tira_imagem() {
             document.getElementById("imagem").src=""
-
-            if(typeof(Storage) !== "undefined" ) {
-                if(localStorage.getItem("teste") >= playlist.length-1 ) {
-                    localStorage.setItem("teste", "0")
-                }
-                else {
-                    localStorage.setItem("teste", Number(localStorage.getItem("teste"))+1)
-                }
-            }
-
-            //if(selec_img_vid>=playlist.length-1) {
-            //    selec_img_vid=0
-            //}
-            //else {
-            //    selec_img_vid=selec_img_vid+1
-            //}
         }
         }
     </script>
